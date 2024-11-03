@@ -1,15 +1,15 @@
 <?php
-
-final readonly class Database
+// phpinfo();die;
+final class Database
 {
 
     public static function connect(): \PDO
     {
         try {
             $user = 'root';
-            $pass = 'root';
-            $dbName = 'Heritage_POO';
-            $dbHost = 'localhost';
+            $pass = 'admin';
+            $dbName = 'database';
+            $dbHost = '127.0.0.1';
             $dbPort = '3306';
 
             $connexion = new \PDO("mysql:host=$dbHost;port=$dbPort;dbname=$dbName;charset=UTF8", $user, $pass);
