@@ -1,4 +1,5 @@
 <?php
+namespace Models;
 
 class Movie extends Media{
     private float $duration;
