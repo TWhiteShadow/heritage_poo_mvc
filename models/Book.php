@@ -1,6 +1,5 @@
 <?php
-namespace App\Models;
-require_once 'Media.php';
+namespace Models;
 
 class Book extends Media{
     private int $pageNumber;

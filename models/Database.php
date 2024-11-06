@@ -1,6 +1,6 @@
 <?php
 // phpinfo();die;
-namespace App\Models;
+namespace Models;
 final class Database
 {
 
