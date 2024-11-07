@@ -1,8 +1,9 @@
 <?php
-namespace Controllers;
+namespace App\Controllers;
 
-use App\Models\Book;
 use App\Models\Database;
+use App\Models\Book;
+
 
 class BookController
 {
@@ -18,7 +19,7 @@ class BookController
     {
         echo 'Hello from BookController index';
         $query = $this->db->query(
-            "SELECT * FROM book"
+            "SELECT * FROM books"
         );
         $books = $query->fetchAll();
       

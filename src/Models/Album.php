@@ -1,6 +1,6 @@
 <?php
 
-namespace Models;
+namespace App\Models;
 class Album extends Media{
     private int $songNumber;
     private string $editor;
