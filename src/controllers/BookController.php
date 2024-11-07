@@ -1,12 +1,8 @@
 <?php
 namespace Controllers;
 
-use Book;
-use Models\Database;
-
-require_once __DIR__ . '/../models/Book.php';
-
-require_once __DIR__ . '/../models/Database.php';
+use App\Models\Book;
+use App\Models\Database;
 
 class BookController
 {
@@ -14,10 +10,13 @@ class BookController
 
     public function __construct()
     {
+        echo 'Hello from BookController constructor';
         $this->db = Database::connect();
+        $this->index();
     }
     public function index()
     {
+        echo 'Hello from BookController index';
         $query = $this->db->query(
             "SELECT * FROM book"
         );
@@ -26,6 +25,7 @@ class BookController
         foreach($books as $key => $book){
           $books[$key] = new Book($book);
         }
+        var_dump($books);
     
         return $books;
     }

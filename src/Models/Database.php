@@ -1,9 +1,9 @@
 <?php
 // phpinfo();die;
-namespace Models;
+namespace App\Models;
+
 final class Database
 {
-
     public static function connect(): \PDO
     {
         try {

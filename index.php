@@ -1,11 +1,13 @@
 <?php
+
+use Controllers\BookController;
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
 session_start();
 
-require 'views/partials/header.php';
+require 'src/views/partials/header.php';
 
 if (isset($_GET['action']) && !empty($_GET['action'])) {
     $params = explode('/', $_GET['action']);
@@ -36,8 +38,9 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
         }
     }
 } else {
-    require_once 'controllers/BookController.php';
-    // library(); // Why ?
+    require_once 'src/controllers/BookController.php';
+    $books = new BookController();
+    $books->index();
 }
 
-require 'views/partials/footer.php';
+require 'src/views/partials/footer.php';

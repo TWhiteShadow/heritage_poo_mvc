@@ -1,5 +1,5 @@
 <?php
-namespace Models;
+namespace App\Models;
 abstract class Media{
 
     private string $title;

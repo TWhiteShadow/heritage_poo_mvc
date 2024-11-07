@@ -1,0 +1,10 @@
+{
+    "name": "thewh/heritage_poo_mvc",
+    "type": "n",
+    "autoload": {
+        "psr-4": {
+            "Thewh\\HeritagePooMvc\\": "src/"
+        }
+    },
+    "require": {}
+}
