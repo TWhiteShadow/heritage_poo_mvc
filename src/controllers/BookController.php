@@ -55,7 +55,7 @@ class BookController
     public function view($id)
     {
         $query = $this->db->prepare(
-            "SELECT * FROM book WHERE id = :id"
+            "SELECT * FROM book, media WHERE book.id = :id AND media_type = 'book'"
         );
         $query->execute([
             'id' => $id
@@ -63,7 +63,7 @@ class BookController
         $book = $query->fetch();
 
         if ($book) {
-            $book = new Book($book);
+            $book = new Book($book['title'], $book['author'], $book['available'], $book['pageNumber']);
         }
 
         return $book;

@@ -16,12 +16,11 @@ require 'src/views/partials/header.php';
 
 if (isset($_GET['action']) && !empty($_GET['action'])) {
     $params = explode('/', $_GET['action']);
-
-    if ($params[0] == '') {
+    print_r("These are my parameters" +  $params);
+    if ($params[0] !== '') {
         $controller = $params[0];
-        $action = $params[1] ?? 'library';
-        $controllerFile = ROOT . 'controllers/' . $controller . 'Controller.php';
-
+        $action = isset($params[1]) ? $params[1] : 'index'; // or library like in charles example page 32
+        $controllerFile = ROOT . 'src/controllers/' . $controller . 'Controller.php';
         if (file_exists($controllerFile)) {
             require_once $controllerFile;
 
@@ -35,11 +34,11 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
                 }
             } else {
                 header('HTTP/1.0 404 Not Found');
-                require_once 'views/errors/404.html';
+                require_once 'src/views/errors/404.html';
             }
         } else {
             header('HTTP/1.0 404 Not Found');
-            require_once 'views/errors/404.html';
+            require_once 'src/views/errors/404.html';
         }
     }
 } else {
