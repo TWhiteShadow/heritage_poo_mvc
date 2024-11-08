@@ -3,7 +3,7 @@
     "type": "n",
     "autoload": {
         "psr-4": {
-            "Thewh\\HeritagePooMvc\\": "src/"
+            "App\\": "src/"
         }
     },
     "require": {}

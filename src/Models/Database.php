@@ -11,7 +11,7 @@ final class Database
             $pass = 'admin';
             $dbName = 'database';
             $dbHost = '127.0.0.1';
-            $dbPort = '3306';
+            $dbPort = '3307';
 
             $connexion = new \PDO("mysql:host=$dbHost;port=$dbPort;dbname=$dbName;charset=UTF8", $user, $pass);
         } catch (\Exception $exception) {

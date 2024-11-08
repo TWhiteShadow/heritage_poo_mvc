@@ -19,12 +19,12 @@ class BookController
     {
         echo 'Hello from BookController index';
         $query = $this->db->query(
-            "SELECT * FROM books"
+            "SELECT * FROM books, media WHERE media_type = 'book'"
         );
         $books = $query->fetchAll();
       
         foreach($books as $key => $book){
-          $books[$key] = new Book($book);
+          $books[$key] = new Book($book['title'], $book['author'], $book['available'], $book['page_number']);
         }
         var_dump($books);
     

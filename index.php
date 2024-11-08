@@ -1,6 +1,11 @@
 <?php
 
+require 'vendor/autoload.php';
+
 use App\Controllers\BookController;
+use App\Models\Book;
+use App\Models\Database;
+
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
