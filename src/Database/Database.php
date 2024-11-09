@@ -1,10 +1,11 @@
 <?php
-// phpinfo();die;
-namespace App\Models;
 
-final class Database
+namespace App\Database;
+
+final readonly class Database
 {
-    public static function connect(): \PDO
+	
+	public static function connect(): \PDO
     {
         try {
             $user = 'root';
@@ -21,3 +22,5 @@ final class Database
         return $connexion;
     }
 }
+
+?>
